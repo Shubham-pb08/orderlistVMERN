@@ -18,9 +18,29 @@ export const Contact = () => {
         })
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         console.log(message);
+
+        try {
+            const response = await fetch('https://orderlist-backend.vercel.app/api/form/contact',{
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(message)
+            });
+
+            if(response.ok) {
+                setMessage({username: '', email: '', message: ''});
+                navigate('/login');
+            }
+
+            console.log("contact ",response);
+        }
+        catch(error) {
+            console.log("error####",error);
+        }
     }
 
     return <>
