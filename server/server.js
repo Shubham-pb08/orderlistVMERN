@@ -8,7 +8,7 @@ const connectDB = require('./utils/db');
 const errorMiddleware = require('./middlewares/error-middleware');
 
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://orderitems.vercel.app",
     methods: "GET, POST, PUT, PATCH, DELETE, HEAD",
     credentials: true,
 }
