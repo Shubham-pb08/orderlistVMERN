@@ -25,7 +25,7 @@ export const Signup = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://orderitems.vercel.app/api/signup',{
+            const response = await fetch('https://orderlist-backend.vercel.app/api/signup',{
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
